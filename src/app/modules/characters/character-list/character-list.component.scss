@@ -1,0 +1,99 @@
+/* Bloque principal */
+/* Contenedor principal en una fila */
+.character-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 500px;
+    /* 🔥 Evita colapso */
+}
+.character-details-container {
+    flex: 1; /* 🔥 Ocupará menos espacio */
+    max-width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  /* Asegurar que app-character-details se expanda correctamente */
+  .character-details-container app-character-details {
+    width: 100%;
+  }
+
+.character-list {
+    flex: 2;
+    /* 🔥 Ocupará más espacio */
+    max-width: 65%;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+    /* Elemento: Contenedor de los filtros */
+    &__filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    /* Elemento: Input y Select */
+    &__input,
+    &__select {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+    /* Elemento: Botón */
+    &__button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    /* Elemento: Tabla */
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    &__thead {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    &__th,
+    &__td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    &__tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    &__tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Estilos para la sección de detalles del personaje */
+
+}
