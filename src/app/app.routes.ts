@@ -3,6 +3,6 @@ import { CharacterListComponent } from './modules/characters/character-list/char
 import { FavoritesComponent } from './modules/favorites/favorites.component';
 
 export const routes: Routes = [
-  { path: '', component: CharacterListComponent }, // Ruta principal con lista de personajes
+  { path: '', component: CharacterListComponent }, 
   { path: 'favoritos', component: FavoritesComponent }
 ];

@@ -1,33 +1,30 @@
+<div class="character-container">
 <mat-card *ngIf="character">
-    <mat-card-header>
-      <mat-card-title>{{ character.name }}</mat-card-title>
-    </mat-card-header>
     
     <img mat-card-image [src]="character.image" alt="{{ character.name }}">
   
     <mat-card-content>
-      <p><strong>Estado:</strong> {{ character.status }}</p>
-      <p><strong>Especie:</strong> {{ character.species }}</p>
-      <p><strong>Género:</strong> {{ character.gender }}</p>
   
       <div *ngIf="originInfo">
-        <h3>Origen: {{ originInfo.name }}</h3>
+        <h3><strong>Origen:</strong>{{ originInfo.name }}</h3>
         <p *ngIf="originInfo.residents.length > 0">
-          Residente: {{ originInfo.residents[0] }}
+            <strong>Residente:</strong> {{ originInfo.residents[0] }}
         </p>
         <p *ngIf="originInfo.residents.length === 0">No tiene residentes</p>
       </div>
   
       <div *ngIf="locationInfo">
-        <h3>Ubicación: {{ locationInfo.name }}</h3>
+        <h3><strong>Ubicación:</strong> {{ locationInfo.name }}</h3>
         <p *ngIf="locationInfo.residents.length > 0">
-          Residente: {{ locationInfo.residents[0] }}
+            <strong>Residente:</strong> {{ locationInfo.residents[0] }}
         </p>
         <p *ngIf="locationInfo.residents.length === 0">No tiene residentes</p>
       </div>
   
       <div *ngIf="episodeInfo">
-        <h3>Episodio: {{ episodeInfo.name }}</h3>
+        <h3><strong>Episodio:</strong>  {{ episodeInfo.name }}</h3>
       </div>
     </mat-card-content>
   </mat-card>
+
+</div>

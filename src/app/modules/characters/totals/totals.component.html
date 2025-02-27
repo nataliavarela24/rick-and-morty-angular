@@ -1,0 +1,22 @@
+<div class="totals-container">
+    <mat-card class="totals-card">
+      <mat-card-title>Totales por Especie</mat-card-title>
+      <table>
+        <tr *ngFor="let key of speciesCount | keyvalue">
+          <td>{{ key.key }}</td>
+          <td>{{ key.value }}</td>
+        </tr>
+      </table>
+    </mat-card>
+  
+    <mat-card class="totals-card">
+      <mat-card-title>Totales por Tipo</mat-card-title>
+      <table>
+        <tr *ngFor="let key of typeCount | keyvalue">
+          <td>{{ key.key || 'Desconocido' }}</td>
+          <td>{{ key.value }}</td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>
+  

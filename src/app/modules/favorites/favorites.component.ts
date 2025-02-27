@@ -7,9 +7,14 @@ import { FavoritesService } from '../../core/services/favorites.service';
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent {
-  constructor(public favoritesService: FavoritesService) {}
+  favorite$ = this.favoritesService.favorite$;
 
-  removeFavorite(id: number) {
-    this.favoritesService.removeFavorite(id);
+  constructor(private favoritesService: FavoritesService) {}
+
+  showFavoriteDetails() {
+    const favorite = this.favoritesService.getFavorite();
+    if (favorite) {
+      alert(`Personaje Favorito:\n\nNombre: ${favorite.name}\nEstado: ${favorite.status}\nEspecie: ${favorite.species}`);
+    }
   }
 }

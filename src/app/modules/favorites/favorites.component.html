@@ -1,20 +1,19 @@
-<mat-card>
-    <mat-card-title>Favoritos</mat-card-title>
-    <mat-card-content>
-      <div *ngIf="(favoritesService.favorites$ | async)?.length === 0">
-        <p>No tienes personajes favoritos.</p>
-      </div>
-  
-      <mat-list>
-        <mat-list-item *ngFor="let character of favoritesService.favorites$ | async">
-          <img mat-list-avatar [src]="character.image" alt="{{ character.name }}">
-          <h3 mat-line>{{ character.name }}</h3>
-          <p mat-line>{{ character.status }} - {{ character.species }}</p>
-          <button mat-icon-button color="warn" (click)="removeFavorite(character.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-  
+<mat-card *ngIf="favorite$ | async as favorite" class="favorite-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon color="accent">star</mat-icon> Personaje Favorito
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="favorite-content">
+    <mat-chip-list>
+      <mat-chip color="primary" selected>
+        <mat-icon>person</mat-icon> {{ favorite.name }}
+      </mat-chip>
+    </mat-chip-list>
+
+    <button mat-raised-button color="accent" (click)="showFavoriteDetails()">
+      <mat-icon>info</mat-icon> Ver Detalles
+    </button>
+  </mat-card-content>
+</mat-card>

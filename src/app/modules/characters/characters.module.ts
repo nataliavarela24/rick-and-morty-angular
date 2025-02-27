@@ -12,9 +12,12 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { TotalsComponent } from './totals/totals.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
-  declarations: [CharacterListComponent, CharacterDetailsComponent],
+  declarations: [CharacterListComponent, CharacterDetailsComponent,TotalsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -25,8 +28,11 @@ import { CharacterDetailsComponent } from './character-details/character-details
     MatCardModule,
     MatGridListModule,
     MatPaginatorModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule,
+    MatChipsModule
+    
   ],
-  exports: [CharacterListComponent, CharacterDetailsComponent]
+  exports: [CharacterListComponent]
 })
 export class CharactersModule {}

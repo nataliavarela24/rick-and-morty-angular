@@ -5,16 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class FavoritesService {
-  private favoritesSubject = new BehaviorSubject<any[]>([]);
-  favorites$ = this.favoritesSubject.asObservable();
+  private favoriteSubject = new BehaviorSubject<any | null>(null);
+  favorite$ = this.favoriteSubject.asObservable();
 
-  addFavorite(character: any) {
-    const favorites = [...this.favoritesSubject.value, character];
-    this.favoritesSubject.next(favorites);
+  setFavorite(character: any) {
+    this.favoriteSubject.next(character);
   }
 
-  removeFavorite(id: number) {
-    const favorites = this.favoritesSubject.value.filter(c => c.id !== id);
-    this.favoritesSubject.next(favorites);
+  getFavorite() {
+    return this.favoriteSubject.value;
   }
 }

@@ -1,5 +1,4 @@
-/* Bloque principal */
-/* Contenedor principal en una fila */
+
 .character-container {
     display: flex;
     flex-direction: row;
@@ -8,30 +7,29 @@
     justify-content: space-between;
     width: 100%;
     min-height: 500px;
-    /* 🔥 Evita colapso */
+    margin-top: 40px;
+    margin-left: 30px;
 }
 .character-details-container {
-    flex: 1; /* 🔥 Ocupará menos espacio */
-    max-width: 35%;
+    flex: 1; 
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-right: 30px;
   }
   
-  /* Asegurar que app-character-details se expanda correctamente */
   .character-details-container app-character-details {
-    width: 100%;
+    width: 80%;
+    
   }
 
 .character-list {
     flex: 2;
-    /* 🔥 Ocupará más espacio */
     max-width: 65%;
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 
-    /* Elemento: Contenedor de los filtros */
     &__filters {
         display: flex;
         gap: 10px;
@@ -39,7 +37,6 @@
         align-items: center;
     }
 
-    /* Elemento: Input y Select */
     &__input,
     &__select {
         padding: 10px;
@@ -93,7 +90,5 @@
     &__tbody tr:hover {
         background-color: #f1f1f1;
     }
-
-    /* Estilos para la sección de detalles del personaje */
 
 }
