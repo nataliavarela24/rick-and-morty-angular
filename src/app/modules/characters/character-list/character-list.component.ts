@@ -49,7 +49,9 @@ export class CharacterListComponent implements OnInit {
     this.selectedCharacter = character;
   }
 
-  markAsFavorite(character: any) {
-    this.favoritesService.setFavorite(character);
+  markAsFavorite(characterId: string) {
+    console.log('Marcando como favorito:', characterId);
+    this.favoritesService.setFavorite(characterId);
   }
+  
 }
