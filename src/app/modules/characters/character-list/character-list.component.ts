@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CharacterService } from '../../../core/services/character.service';
-import { FavoritesService } from '../../../core/services/favorites.service';
+import { FavoritesService } from '../../../core/services/favoritesGraphql.service';
 
 @Component({
   selector: 'app-character-list',

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { FavoritesService } from '../../core/services/favorites.service';
+import { FavoritesService } from '../../core/services/favoritesGraphql.service';
 
 @Component({
   selector: 'app-favorites',
