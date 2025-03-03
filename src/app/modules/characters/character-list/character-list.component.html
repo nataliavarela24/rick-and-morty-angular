@@ -74,11 +74,9 @@
                     </td>
                 </ng-container>
 
-
-
-                <!--Definir filas de encabezado y contenido -->
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectCharacter(row)"
+                    [class.selected]="row === selectedCharacter"></tr>
             </table>
 
             <!--Paginación -->

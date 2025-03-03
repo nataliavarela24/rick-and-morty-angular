@@ -20,9 +20,10 @@ export class CharacterListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private characterService: CharacterService,
+  constructor(
+    private characterService: CharacterService,
     private favoritesService: FavoritesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadCharacters();
@@ -33,6 +34,10 @@ export class CharacterListComponent implements OnInit {
       this.characters$.data = response.results;
       this.characters$.paginator = this.paginator;
 
+      // Seleccionar el primer personaje automáticamente si hay datos
+      if (this.characters$.data.length > 0) {
+        this.selectedCharacter = this.characters$.data[0];
+      }
     });
   }
 
@@ -47,6 +52,4 @@ export class CharacterListComponent implements OnInit {
   markAsFavorite(character: any) {
     this.favoritesService.setFavorite(character);
   }
-
 }
-
